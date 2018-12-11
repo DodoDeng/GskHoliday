@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: middle;
+            outline: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+            font-size: 16px;
+            color: #121212;
+            background: linear-gradient(top, #f99809, #e42316);
+            background: -ms-linear-gradient(top, #f99809, #e42316);
+            background: -webkit-linear-gradient(top, #f99809, #e42316);
+            background: -moz-linear-gradient(top, #f99809, #e42316);
+        }
+
+        .wrapper {
+            background: url(images/bg_1.png) no-repeat 50% 0;
+            background-size: contain;
+            height: 100vh;
+            padding: 1rem;
+        }
+    
+        .gsk-logo img {
+            width: 6.5rem;
+            float: right;
+        }
+    
+        .title {
+            margin: 5rem 0 1rem 0;
+        }
+    
+        .title img {
+            width: 13rem;
+        }
+    
+        .content {
+            border-radius: 0.5rem;
+            background-color: #fff;
+            padding:1rem 1rem 1.5rem;
+        }
+    
+        h1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing:-0.5px;
+        }
+    
+        input {
+            background-color: #f0f0f0;
+            border: 1px solid #d6d6d6;
+            border-radius: 0.3rem;
+            width: 100%;
+            height: 2.6rem;
+            margin: 1rem 0 1.2rem 0;
+            padding: 0.2rem 0.5rem;
+            color：#121212;
+        }
+    
+        button {
+            line-height:200%;
+            border-radius: 0.3rem;
+            width: 47%;
+            padding:0.2rem;
+        }
+    
+        button[type="reset"] {
+            border: 1px solid #f36633;
+            color: #f36633;
+            background-color: #fff;
+        }
+    
+        button[type="submit"] {
+            background-color: #f36633;
+            color: #fff;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function cheackEmail() {
+            var temp = document.getElementById("email");
+            //对电子邮件的验证
+            var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            if (!myreg.test(temp.value)) {
+                alert('请输入有效的E_mail');
+                temp.value = "";
+                return false;
+            } else {
+                console.log("Succeed")
+            }
+        }
+
+        function resetValue() {
+            var temp = document.getElementById("email");
+            temp.value = "";
+        }
+
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="gsk-logo"><img src= "images/gsk_logo_1.png"></div>
+        <div class="title"><img src="images/title.png"></div>
+        <div class="content">
+            <h1>Email address</h1>
+            <input type="text" id="email"/>
+            <div>
+                <button type="reset" onclick="resetValue()" style="margin-right:4%">Reset</button>
+                <button type="submit" onclick="cheackEmail()" style="float:right">Submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
